@@ -3,6 +3,7 @@ namespace app\api\validate;
 use think\Validate;
 use think\facade\Request;
 use think\Exception;
+use app\lib\exception\ParameterException;
 
 class BaseValidate extends Validate{
     public function goCheck() {
@@ -11,10 +12,14 @@ class BaseValidate extends Validate{
         $param = $request->param();
 
         $result = $this->check($param);
-
         if(!$result) {
-            $error = $this->error;
-            throw new Exception($error);
+            $e = new ParameterException([
+                'msg' => $this->error
+            ]);
+            // $e->msg = $this->error;
+            throw $e;
+            // $error = $this->error;
+            // throw new Exception($error);
         }else{
             return true;
         }

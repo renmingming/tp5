@@ -2,14 +2,21 @@
 namespace app\api\model;
 
 use think\Exception;
+use think\Db;
 
 class Banner {
     public static function getBannerById($id) {
-        // try {
-        //     1 / 0;
-        // } catch (Exception $ex) {
-        //     throw $ex;
-        // }
-        return null;
+        // $result = Db::query('select * from banner_item where banner_id=?', [$id]);
+        // $result = Db::table('banner_item')->where('id',$id)->select();
+        // dump($result);
+        $result = Db::table('banner_item')
+            // ->where('banner_id','=', $id)
+            // 闭包方式
+            ->where(function($query) use ($id){
+                $query->where('banner_id', '=', $id);
+            })
+            ->select();
+
+        return $result;
     }
 }
