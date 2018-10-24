@@ -20,7 +20,10 @@ class Banner {
     public function getBanner($id) {
         (new IDMustBePositiveInt())->goCheck();
         // $banner = BannerModel::getBannerById($id);
-        $banner = BannerModel::get($id);
+        $banner = BannerModel::with("items")->find($id);
+        // $banner1 = BannerModel::get($id);
+        // $banner = $banner1->items; 获取到的是bannerItem数据
+        // get find all select
        if(!$banner) {
            throw new BannerMissException();
        }
