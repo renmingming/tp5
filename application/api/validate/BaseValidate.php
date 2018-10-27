@@ -24,13 +24,21 @@ class BaseValidate extends Validate{
             return true;
         }
     }
-
+    // 判断是否为正整数
     protected function isPostiveInteger($value, $rule = '', $data = '', $field = '') {
         if(is_numeric($value) && is_int($value + 0) && ($value + 0) > 0) {
             return true;
         } else {
             // return $field.'必须是正整数';
             return false;
+        }
+    }
+    // 判断是否为空
+    protected function isNotEmpty($value, $rule='', $date='', $field='') {
+        if(empty($value)) {
+            return false;
+        }else{
+            return true;
         }
     }
 }
