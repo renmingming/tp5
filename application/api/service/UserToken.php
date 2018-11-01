@@ -2,6 +2,7 @@
 namespace app\api\service;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use think\facade\Cache;
 use app\lib\exception\WeChatException;
 use app\api\model\User as UserModel;
@@ -9,6 +10,11 @@ use app\lib\exception\TokenException;
 use app\lib\enum\ScopeEnum;
 
 class UserToken extends Token{
+=======
+use app\lib\exception\WeChatException;
+
+class UserToken {
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 =======
 use app\lib\exception\WeChatException;
 
@@ -28,6 +34,10 @@ class UserToken {
 
     public function get() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        $id = config('app_id');
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 =======
         $id = config('app_id');
 >>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
@@ -43,7 +53,11 @@ class UserToken {
                 $this->processLoginError($wxResult);
             } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 return $this->grantToken($wxResult);
+=======
+                $this->grantToken($wxResult);
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 =======
                 $this->grantToken($wxResult);
 >>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
@@ -57,6 +71,7 @@ class UserToken {
         // 如果存在不处理，如果不存在新增一条用户信息
         // 生成令牌，准备缓存数据，写入缓存
         // 把令牌返回到客户端
+<<<<<<< HEAD
 <<<<<<< HEAD
         // key:令牌，value: wxResult+uid+scope
         $openid = $wxResult['openid'];
@@ -106,10 +121,15 @@ class UserToken {
 
     // 错误异常
 =======
+=======
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
         $openid = $wxResult['openid'];
         return $wxResult;
     }
 
+<<<<<<< HEAD
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
+=======
 >>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
     private function processLoginError($wxResult) {
         throw new WeChatException([

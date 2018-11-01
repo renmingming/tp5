@@ -57,6 +57,7 @@ function curl_get($url, &$httpCode = 0)
     curl_close($ch);
     return $file_contents;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 function getRandChar($length)
@@ -70,6 +71,8 @@ function getRandChar($length)
     }
 
     return $str;
+=======
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 =======
 >>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 }

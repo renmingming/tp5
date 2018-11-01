@@ -3,6 +3,7 @@ namespace app\api\model;
 
 class User extends BaseModel {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public function address() {
         return $this->hasOne('UserAddress', 'user_id', 'id');
@@ -13,6 +14,9 @@ class User extends BaseModel {
             ->find();
         return $user;
     }
+=======
+    
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 =======
     
 >>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21

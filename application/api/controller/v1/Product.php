@@ -28,12 +28,15 @@ class Product {
         return $products;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public function getProductDetail($id) {
         (new IDMustBePositiveInt())->goCheck();
         $products = ProductModel::getProductsDetailById($id);
         return $products;
     }
+=======
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 =======
 >>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 }

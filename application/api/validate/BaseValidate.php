@@ -34,6 +34,7 @@ class BaseValidate extends Validate{
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     // 手机好判读
     protected function isMobile($value, $rule='', $data='', $field='') {
         $reg = '/^1[3-9]\d{9}/';
@@ -46,6 +47,8 @@ class BaseValidate extends Validate{
     }
 =======
 >>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
+=======
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
     // 判断是否为空
     protected function isNotEmpty($value, $rule='', $date='', $field='') {
         if(empty($value)) {
@@ -54,6 +57,7 @@ class BaseValidate extends Validate{
             return true;
         }
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
     // 根据后台所需，取前台传来的相对应参数
     public function getDataByRule($arrays) {
@@ -72,6 +76,8 @@ class BaseValidate extends Validate{
         }
         return $newArray;
     }
+=======
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 =======
 >>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 }
