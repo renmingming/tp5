@@ -24,7 +24,7 @@ class BaseValidate extends Validate{
             return true;
         }
     }
-
+    // 判断是否为正整数
     protected function isPostiveInteger($value, $rule = '', $data = '', $field = '') {
         if(is_numeric($value) && is_int($value + 0) && ($value + 0) > 0) {
             return true;
@@ -33,4 +33,45 @@ class BaseValidate extends Validate{
             return false;
         }
     }
+<<<<<<< HEAD
+    // 手机好判读
+    protected function isMobile($value, $rule='', $data='', $field='') {
+        $reg = '/^1[3-9]\d{9}/';
+        $preg = preg_match($reg, $value);
+        if($preg) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+=======
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
+    // 判断是否为空
+    protected function isNotEmpty($value, $rule='', $date='', $field='') {
+        if(empty($value)) {
+            return false;
+        }else{
+            return true;
+        }
+    }
+<<<<<<< HEAD
+    // 根据后台所需，取前台传来的相对应参数
+    public function getDataByRule($arrays) {
+        if(array_key_exists('user_id', $arrays) |
+            array_key_exists('uid', $arrays)
+        ) {
+            throw new ParameterException([
+                'msg' => '参数中包含有非法参数名user_id或uid'
+            ]);
+        }
+
+        $newArray = [];
+
+        foreach ($this->rule as $key => $value) {
+            $newArray[$key] = $arrays[$key];
+        }
+        return $newArray;
+    }
+=======
+>>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 }

@@ -2,8 +2,6 @@
 
 namespace app\api\controller\v1;
 
-use think\Controller;
-use think\Request;
 use app\api\validate\IDCollection;
 use app\api\validate\IDMustBePositiveInt;
 use app\api\model\Theme as ThemeModel;
@@ -21,7 +19,7 @@ class Theme{
         $ids = explode(',', $ids);
         $result = ThemeModel::with(['topicImg', 'headImg'])
             ->select($ids);
-        if(!$result) {
+        if($result->isEmpty()) {
             throw new ThemeException();
         }
         return json($result);
