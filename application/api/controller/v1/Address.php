@@ -8,6 +8,7 @@ use app\api\model\User as UserModel;
 use app\lib\exception\ForbiddenException;
 use app\lib\exception\TokenException;
 use app\lib\enum\ScopeEnum;
+use app\api\controller\BaseController;
 
 class Address extends BaseController{
     // 前置方法

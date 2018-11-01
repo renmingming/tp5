@@ -21,7 +21,6 @@ class Product extends BaseModel {
             ->select();
         return $category;
     }
-<<<<<<< HEAD
 
     public function imgs() {
         return $this->hasMany('ProductImage', 'product_id', 'id')->order('order', 'asc');
@@ -35,6 +34,4 @@ class Product extends BaseModel {
             ->find($id);
         return $detail;
     }
-=======
->>>>>>> 6abbf5501ab121f9900344d6935e2663d0b49e21
 }
