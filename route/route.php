@@ -33,6 +33,7 @@ Route::post('api/:version/address/user', 'api/:version.Address/createUpdateAddre
 
 Route::post('api/:version/order', 'api/:version.Order/PlaceOrder');
 
+Route::post('api/:version/pay/pre_order', 'api/:version.Pay/getPreOrder');
 
 return [
 

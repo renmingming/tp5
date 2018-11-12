@@ -117,6 +117,18 @@ class Order{
         return $userAddress->toArray();
     }
 
+    // 对外库存量检测
+    public function checkOrderStock($orderId) {
+        $oProducts = OrderProduct::where('order_id', '=', $orderId)
+            ->select();
+        
+        $this->oProducts = $oProducts;
+        $this->products = $this->getProductsByOrder($oProducts);
+
+        $status = $this->getOrderStatus();
+        return $status;
+    }
+
     private function getOrderStatus() {
         $status = [
             'pass' => true, // 对比是否通过
